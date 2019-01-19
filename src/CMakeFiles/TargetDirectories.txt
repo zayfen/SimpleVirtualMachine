@@ -1,0 +1,3 @@
+/home/zayafa/workspace/SimpleVirtualMachine/src/CMakeFiles/rebuild_cache.dir
+/home/zayafa/workspace/SimpleVirtualMachine/src/CMakeFiles/SimpleVirutalMachineLib.dir
+/home/zayafa/workspace/SimpleVirtualMachine/src/CMakeFiles/edit_cache.dir

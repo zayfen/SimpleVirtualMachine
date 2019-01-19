@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC   -shared -Wl,-soname,libSimpleVirutalMachineLib.so -o libSimpleVirutalMachineLib.so CMakeFiles/SimpleVirutalMachineLib.dir/vm.c.o 

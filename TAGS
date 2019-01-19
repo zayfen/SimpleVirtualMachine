@@ -1,0 +1,1081 @@
+
+include/vm.h,488
+#define VM_H__2,15
+typedef struct object_t 6,52
+  uint8_t type;7,78
+    int8_t i8;9,104
+    uint8_t u8;10,119
+    int32_t i32;11,135
+    uint32_t u32;12,152
+    void* ptr;13,170
+} Object;16,191
+typedef struct stack_t 18,202
+  uint32_t size;19,227
+  uint32_t top;20,244
+  Object* stack;21,260
+} Stack;22,277
+typedef uint8_t* (*instruction)instruction26,323
+enum INSTRUCTION_TYPE28,376
+   TYPE_HALT 30,402
+   TYPE_NOP,31,420
+   TYPE_PUSH_CHAR,32,433
+   TYPE_EMIT33,452
+
+.ccls-cache/@home@zayafa@workspace@SimpleVirtualMachine@/include@vm.h,203
+#define VM_H__2,15
+typedef struct Object_t 6,52
+  uint8_t type;7,78
+    int8_t i8;9,104
+    uint8_t u8;10,119
+    int32_t i32;11,135
+    uint32_t u32;12,152
+    void* ptr;13,170
+} Object;17,192
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@gnu@stubs-64.h,420
+#define __stub___compat_bdflush10,291
+#define __stub_chflags11,323
+#define __stub_fattach12,346
+#define __stub_fchflags13,369
+#define __stub_fdetach14,393
+#define __stub_getmsg15,416
+#define __stub_gtty16,438
+#define __stub_lchmod17,458
+#define __stub_putmsg18,480
+#define __stub_revoke19,502
+#define __stub_setlogin20,524
+#define __stub_sigreturn21,548
+#define __stub_sstk22,573
+#define __stub_stty23,593
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@bits@libc-header-start.h,612
+#undef __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION31,1375
+#undef __GLIBC_USE_LIB_EXT237,1530
+# define __GLIBC_USE_LIB_EXT2 40,1661
+# define __GLIBC_USE_LIB_EXT2 42,1699
+#undef __GLIBC_USE_IEC_60559_BFP_EXT47,1824
+# define __GLIBC_USE_IEC_60559_BFP_EXT 49,1926
+# define __GLIBC_USE_IEC_60559_BFP_EXT 51,1973
+#undef __GLIBC_USE_IEC_60559_FUNCS_EXT56,2109
+# define __GLIBC_USE_IEC_60559_FUNCS_EXT 58,2215
+# define __GLIBC_USE_IEC_60559_FUNCS_EXT 60,2264
+#undef __GLIBC_USE_IEC_60559_TYPES_EXT65,2402
+# define __GLIBC_USE_IEC_60559_TYPES_EXT 67,2508
+# define __GLIBC_USE_IEC_60559_TYPES_EXT 69,2557
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@sys@cdefs.h,4654
+#define	_SYS_CDEFS_H	19,810
+#undef	__P34,1293
+#undef	__PMT35,1304
+#  define __LEAF 42,1486
+#  define __LEAF_ATTR 43,1514
+#  define __LEAF45,1570
+#  define __LEAF_ATTR46,1587
+#  define __THROW	55,1994
+#  define __THROWNL	56,2049
+#  define __NTH(57,2099
+#  define __NTHNL(58,2161
+#   define __THROW	61,2275
+#   define __THROWNL	62,2303
+#   define __NTH(63,2333
+#   define __NTHNL(64,2380
+#   define __THROW66,2425
+#   define __THROWNL67,2444
+#   define __NTH(68,2465
+#   define __NTHNL(69,2491
+# define __inline	75,2560
+# define __THROW77,2608
+# define __THROWNL78,2625
+# define __NTH(79,2644
+# define __glibc_clang_has_extension(87,2916
+# define __glibc_clang_has_extension(89,2986
+#define __P(94,3182
+#define __PMT(95,3205
+#define __CONCAT(100,3336
+#define __STRING(101,3365
+#define __ptr_t 104,3459
+# define __BEGIN_DECLS	109,3572
+# define __END_DECLS	110,3608
+# define __BEGIN_DECLS112,3637
+# define __END_DECLS113,3660
+#define __bos(118,3714
+#define __bos0(119,3786
+# define __warndecl(122,3862
+# define __warnattr(124,3956
+# define __errordecl(125,4016
+# define __warndecl(128,4115
+# define __warnattr(129,4170
+# define __errordecl(130,4195
+# define __flexarr	138,4516
+# define __glibc_c99_flexarr_available 139,4538
+# define __flexarr	143,4732
+# define __glibc_c99_flexarr_available 144,4754
+# define __flexarr	148,4948
+# define __glibc_c99_flexarr_available 149,4971
+# define __flexarr	152,5077
+# define __glibc_c99_flexarr_available 153,5100
+# define __REDIRECT(169,5661
+#  define __REDIRECT_NTH(171,5761
+#  define __REDIRECT_NTHNL(173,5861
+#  define __REDIRECT_NTH(176,5972
+#  define __REDIRECT_NTHNL(178,6072
+# define __ASMNAME(181,6184
+# define __ASMNAME2(182,6253
+# define __attribute_malloc__ 203,6971
+# define __attribute_malloc__ 205,7036
+# define __attribute_alloc_size__(211,7219
+# define __attribute_alloc_size__(214,7311
+# define __attribute_pure__ 221,7615
+# define __attribute_pure__ 223,7676
+# define __attribute_const__ 228,7820
+# define __attribute_const__ 230,7883
+# define __attribute_used__ 237,8170
+# define __attribute_noinline__ 238,8225
+# define __attribute_used__ 240,8294
+# define __attribute_noinline__ 241,8351
+# define __attribute_deprecated__ 246,8495
+# define __attribute_deprecated__ 248,8568
+# define __attribute_deprecated_msg__(256,8907
+# define __attribute_deprecated_msg__(259,8999
+# define __attribute_format_arg__(269,9508
+# define __attribute_format_arg__(271,9588
+# define __attribute_format_strfmon__(279,9898
+# define __attribute_format_strfmon__(282,10000
+# define __nonnull(288,10186
+# define __nonnull(290,10256
+# define __attribute_warn_unused_result__ 296,10431
+#  define __wur 299,10548
+# define __attribute_warn_unused_result__ 302,10611
+# define __wur 305,10686
+# undef __always_inline313,10984
+# define __always_inline 314,11008
+# undef __always_inline316,11084
+# define __always_inline 317,11108
+# define __attribute_artificial__ 323,11309
+# define __attribute_artificial__ 325,11382
+#  define __extern_inline 341,12168
+#  define __extern_always_inline 342,12243
+#  define __extern_inline 345,12343
+#  define __extern_always_inline 346,12385
+# define __fortify_function 351,12487
+# define __va_arg_pack(357,12730
+# define __va_arg_pack_len(358,12780
+# define __extension__	366,13100
+# define __restrict	371,13220
+# define __restrict_arr	378,13438
+#  define __restrict_arr	381,13496
+#   define __restrict_arr	384,13623
+#   define __restrict_arr	387,13702
+# define __glibc_unlikely(393,13793
+# define __glibc_likely(394,13854
+# define __glibc_unlikely(396,13919
+# define __glibc_likely(397,13958
+#  define _Noreturn 404,14154
+#  define _Noreturn406,14212
+# define __attribute_nonstring__ 414,14452
+# define __attribute_nonstring__416,14523
+# define _Static_assert(422,14748
+# define __LDBL_COMPAT 431,15055
+#  define __LDBL_REDIR1(433,15099
+#  define __LDBL_REDIR(434,15175
+#  define __LDBL_REDIR1_NTH(436,15259
+#  define __LDBL_REDIR_NTH(437,15343
+#  define __LDBL_REDIR1_DECL(439,15435
+#  define __LDBL_REDIR_DECL(441,15537
+#  define __REDIRECT_LDBL(443,15641
+#  define __REDIRECT_NTH_LDBL(445,15736
+# define __LDBL_REDIR1(450,15904
+# define __LDBL_REDIR(451,15958
+# define __LDBL_REDIR1_NTH(452,16004
+# define __LDBL_REDIR_NTH(453,16070
+# define __LDBL_REDIR_DECL(454,16128
+#  define __REDIRECT_LDBL(456,16180
+#  define __REDIRECT_NTH_LDBL(457,16258
+# define __glibc_macro_warning1(468,16633
+# define __glibc_macro_warning(469,16693
+# define __glibc_macro_warning(472,16788
+# define __HAVE_GENERIC_SELECTION 487,17510
+# define __HAVE_GENERIC_SELECTION 489,17552
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@stdint.h,5263
+#define _STDINT_H	23,857
+#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION25,878
+typedef signed char		int_least8_t;43,1208
+typedef short int		int_least16_t;44,1243
+typedef int			int_least32_t;45,1277
+typedef long int		int_least64_t;47,1327
+typedef long long int		int_least64_t;50,1380
+typedef unsigned char		uint_least8_t;54,1443
+typedef unsigned short int	uint_least16_t;55,1481
+typedef unsigned int		uint_least32_t;56,1524
+typedef unsigned long int	uint_least64_t;58,1583
+typedef unsigned long long int	uint_least64_t;61,1645
+typedef signed char		int_fast8_t;68,1736
+typedef long int		int_fast16_t;70,1791
+typedef long int		int_fast32_t;71,1823
+typedef long int		int_fast64_t;72,1855
+typedef int			int_fast16_t;74,1893
+typedef int			int_fast32_t;75,1921
+typedef long long int		int_fast64_t;77,1963
+typedef unsigned char		uint_fast8_t;81,2025
+typedef unsigned long int	uint_fast16_t;83,2083
+typedef unsigned long int	uint_fast32_t;84,2124
+typedef unsigned long int	uint_fast64_t;85,2165
+typedef unsigned int		uint_fast16_t;87,2212
+typedef unsigned int		uint_fast32_t;88,2249
+typedef unsigned long long int	uint_fast64_t;90,2300
+typedef long int		intptr_t;97,2440
+#  define __intptr_t_defined98,2468
+typedef unsigned long int	uintptr_t;100,2505
+typedef int			intptr_t;103,2576
+#  define __intptr_t_defined104,2600
+typedef unsigned int		uintptr_t;106,2637
+typedef __intmax_t		intmax_t;111,2710
+typedef __uintmax_t		uintmax_t;112,2740
+#  define __INT64_C(116,2796
+#  define __UINT64_C(117,2826
+#  define __INT64_C(119,2865
+#  define __UINT64_C(120,2896
+# define INT8_MIN	126,3013
+# define INT16_MIN	127,3039
+# define INT32_MIN	128,3070
+# define INT64_MIN	129,3106
+# define INT8_MAX	131,3203
+# define INT16_MAX	132,3228
+# define INT32_MAX	133,3256
+# define INT64_MAX	134,3289
+# define UINT8_MAX	137,3386
+# define UINT16_MAX	138,3412
+# define UINT32_MAX	139,3441
+# define UINT64_MAX	140,3476
+# define INT_LEAST8_MIN	144,3597
+# define INT_LEAST16_MIN	145,3629
+# define INT_LEAST32_MIN	146,3665
+# define INT_LEAST64_MIN	147,3706
+# define INT_LEAST8_MAX	149,3830
+# define INT_LEAST16_MAX	150,3861
+# define INT_LEAST32_MAX	151,3894
+# define INT_LEAST64_MAX	152,3932
+# define UINT_LEAST8_MAX	155,4056
+# define UINT_LEAST16_MAX	156,4087
+# define UINT_LEAST32_MAX	157,4121
+# define UINT_LEAST64_MAX	158,4161
+# define INT_FAST8_MIN	162,4292
+#  define INT_FAST16_MIN	164,4345
+#  define INT_FAST32_MIN	165,4396
+#  define INT_FAST16_MIN	167,4454
+#  define INT_FAST32_MIN	168,4495
+# define INT_FAST64_MIN	170,4544
+# define INT_FAST8_MAX	172,4673
+#  define INT_FAST16_MAX	174,4725
+#  define INT_FAST32_MAX	175,4773
+#  define INT_FAST16_MAX	177,4828
+#  define INT_FAST32_MAX	178,4866
+# define INT_FAST64_MAX	180,4912
+# define UINT_FAST8_MAX	183,5041
+#  define UINT_FAST16_MAX	185,5094
+#  define UINT_FAST32_MAX	186,5145
+#  define UINT_FAST16_MAX	188,5203
+#  define UINT_FAST32_MAX	189,5243
+# define UINT_FAST64_MAX	191,5291
+#  define INTPTR_MIN	196,5442
+#  define INTPTR_MAX	197,5490
+#  define UINTPTR_MAX	198,5535
+#  define INTPTR_MIN	200,5590
+#  define INTPTR_MAX	201,5628
+#  define UINTPTR_MAX	202,5663
+# define INTMAX_MIN	207,5759
+# define INTMAX_MAX	209,5865
+# define UINTMAX_MAX	212,5971
+#  define PTRDIFF_MIN	219,6126
+#  define PTRDIFF_MAX	220,6175
+#   define PTRDIFF_MIN	223,6260
+#   define PTRDIFF_MAX	224,6301
+#   define PTRDIFF_MIN	226,6347
+#   define PTRDIFF_MAX	227,6387
+# define SIG_ATOMIC_MIN	232,6475
+# define SIG_ATOMIC_MAX	233,6516
+#  define SIZE_MAX	237,6608
+#   define SIZE_MAX	240,6690
+#   define SIZE_MAX	242,6734
+#  define WCHAR_MIN	249,6893
+#  define WCHAR_MAX	250,6926
+# define WINT_MIN	254,6995
+# define WINT_MAX	255,7019
+# define INT8_C(258,7068
+# define INT16_C(259,7089
+# define INT32_C(260,7111
+#  define INT64_C(262,7155
+#  define INT64_C(264,7190
+# define UINT8_C(268,7245
+# define UINT16_C(269,7267
+# define UINT32_C(270,7290
+#  define UINT64_C(272,7340
+#  define UINT64_C(274,7377
+#  define INTMAX_C(279,7460
+#  define UINTMAX_C(280,7489
+#  define INTMAX_C(282,7527
+#  define UINTMAX_C(283,7557
+# define INT8_WIDTH 288,7635
+# define UINT8_WIDTH 289,7657
+# define INT16_WIDTH 290,7680
+# define UINT16_WIDTH 291,7704
+# define INT32_WIDTH 292,7729
+# define UINT32_WIDTH 293,7753
+# define INT64_WIDTH 294,7778
+# define UINT64_WIDTH 295,7802
+# define INT_LEAST8_WIDTH 297,7828
+# define UINT_LEAST8_WIDTH 298,7856
+# define INT_LEAST16_WIDTH 299,7885
+# define UINT_LEAST16_WIDTH 300,7915
+# define INT_LEAST32_WIDTH 301,7946
+# define UINT_LEAST32_WIDTH 302,7976
+# define INT_LEAST64_WIDTH 303,8007
+# define UINT_LEAST64_WIDTH 304,8037
+# define INT_FAST8_WIDTH 306,8069
+# define UINT_FAST8_WIDTH 307,8096
+# define INT_FAST16_WIDTH 308,8124
+# define UINT_FAST16_WIDTH 309,8161
+# define INT_FAST32_WIDTH 310,8199
+# define UINT_FAST32_WIDTH 311,8236
+# define INT_FAST64_WIDTH 312,8274
+# define UINT_FAST64_WIDTH 313,8303
+# define INTPTR_WIDTH 315,8334
+# define UINTPTR_WIDTH 316,8367
+# define INTMAX_WIDTH 318,8402
+# define UINTMAX_WIDTH 319,8427
+# define PTRDIFF_WIDTH 321,8454
+# define SIG_ATOMIC_WIDTH 322,8488
+# define SIZE_WIDTH 323,8517
+# define WCHAR_WIDTH 324,8548
+# define WINT_WIDTH 325,8572
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@features.h,4183
+#define	_FEATURES_H	19,809
+#undef	__USE_ISOC11119,5460
+#undef	__USE_ISOC99120,5480
+#undef	__USE_ISOC95121,5500
+#undef	__USE_ISOCXX11122,5520
+#undef	__USE_POSIX123,5542
+#undef	__USE_POSIX2124,5561
+#undef	__USE_POSIX199309125,5581
+#undef	__USE_POSIX199506126,5606
+#undef	__USE_XOPEN127,5631
+#undef	__USE_XOPEN_EXTENDED128,5650
+#undef	__USE_UNIX98129,5678
+#undef	__USE_XOPEN2K130,5698
+#undef	__USE_XOPEN2KXSI131,5719
+#undef	__USE_XOPEN2K8132,5743
+#undef	__USE_XOPEN2K8XSI133,5765
+#undef	__USE_LARGEFILE134,5790
+#undef	__USE_LARGEFILE64135,5813
+#undef	__USE_FILE_OFFSET64136,5838
+#undef	__USE_MISC137,5865
+#undef	__USE_ATFILE138,5883
+#undef	__USE_GNU139,5903
+#undef	__USE_FORTIFY_LEVEL140,5920
+#undef	__KERNEL_STRICT_NAMES141,5947
+#undef	__GLIBC_USE_DEPRECATED_GETS142,5976
+# define __KERNEL_STRICT_NAMES147,6124
+# define __GNUC_PREREQ(158,6448
+# define __GNUC_PREREQ(161,6551
+# define __glibc_clang_prereq(169,6922
+# define __glibc_clang_prereq(172,7041
+#define __GLIBC_USE(176,7128
+# undef  _DEFAULT_SOURCE185,7557
+# define _DEFAULT_SOURCE	186,7582
+# undef  _ISOC95_SOURCE191,7715
+# define _ISOC95_SOURCE	192,7739
+# undef  _ISOC99_SOURCE193,7765
+# define _ISOC99_SOURCE	194,7789
+# undef  _ISOC11_SOURCE195,7815
+# define _ISOC11_SOURCE	196,7839
+# undef  _POSIX_SOURCE197,7865
+# define _POSIX_SOURCE	198,7888
+# undef  _POSIX_C_SOURCE199,7913
+# define _POSIX_C_SOURCE	200,7938
+# undef  _XOPEN_SOURCE201,7971
+# define _XOPEN_SOURCE	202,7994
+# undef  _XOPEN_SOURCE_EXTENDED203,8021
+# define _XOPEN_SOURCE_EXTENDED	204,8053
+# undef	 _LARGEFILE64_SOURCE205,8087
+# define _LARGEFILE64_SOURCE	206,8116
+# undef  _DEFAULT_SOURCE207,8147
+# define _DEFAULT_SOURCE	208,8172
+# undef  _ATFILE_SOURCE209,8199
+# define _ATFILE_SOURCE	210,8223
+# undef  _DEFAULT_SOURCE220,8555
+# define _DEFAULT_SOURCE	221,8580
+# define __USE_ISOC11	227,8760
+# define __USE_ISOC99	233,8963
+# define __USE_ISOC95	239,9183
+#  define __USE_ISOC11	245,9316
+#  define __USE_ISOCXX11	250,9512
+#  define __USE_ISOC99	251,9539
+#  define __USE_POSIX_IMPLICITLY	260,9818
+# undef  _POSIX_SOURCE262,9861
+# define _POSIX_SOURCE	263,9884
+# undef  _POSIX_C_SOURCE264,9909
+# define _POSIX_C_SOURCE	265,9934
+# define _POSIX_SOURCE	271,10138
+#  define _POSIX_C_SOURCE	273,10219
+#  define _POSIX_C_SOURCE	275,10305
+#  define _POSIX_C_SOURCE	277,10397
+#  define _POSIX_C_SOURCE	279,10438
+# define __USE_POSIX_IMPLICITLY	281,10480
+# define _POSIX_SOURCE 292,11062
+# undef  _POSIX_C_SOURCE293,11089
+# define _POSIX_C_SOURCE 294,11114
+# define __USE_POSIX	300,11279
+# define __USE_POSIX2	304,11387
+# define __USE_POSIX199309	308,11483
+# define __USE_POSIX199506	312,11584
+# define __USE_XOPEN2K	316,11685
+# undef __USE_ISOC95317,11711
+# define __USE_ISOC95	318,11732
+# undef __USE_ISOC99319,11757
+# define __USE_ISOC99	320,11778
+# define __USE_XOPEN2K8	324,11875
+# undef  _ATFILE_SOURCE325,11902
+# define _ATFILE_SOURCE	326,11926
+# define __USE_XOPEN	330,11981
+#  define __USE_XOPEN_EXTENDED	332,12036
+#  define __USE_UNIX98	333,12069
+#  undef _LARGEFILE_SOURCE334,12094
+#  define _LARGEFILE_SOURCE	335,12121
+#    define __USE_XOPEN2K8	338,12218
+#    define __USE_XOPEN2K8XSI	339,12247
+#   define __USE_XOPEN2K	341,12289
+#   define __USE_XOPEN2KXSI	342,12316
+#   undef __USE_ISOC95343,12346
+#   define __USE_ISOC95	344,12369
+#   undef __USE_ISOC99345,12396
+#   define __USE_ISOC99	346,12419
+#   define __USE_XOPEN_EXTENDED	350,12494
+# define __USE_LARGEFILE	356,12578
+# define __USE_LARGEFILE64	360,12640
+# define __USE_FILE_OFFSET64	364,12734
+# define __USE_MISC	368,12801
+# define __USE_ATFILE	372,12853
+# define __USE_GNU	376,12904
+#  define __USE_FORTIFY_LEVEL 382,13083
+#  define __USE_FORTIFY_LEVEL 384,13122
+# define __USE_FORTIFY_LEVEL 387,13168
+# define __GLIBC_USE_DEPRECATED_GETS 395,13554
+# define __GLIBC_USE_DEPRECATED_GETS 397,13599
+#undef  __GNU_LIBRARY__410,14191
+#define __GNU_LIBRARY__ 411,14215
+#define	__GLIBC__	415,14374
+#define	__GLIBC_MINOR__	416,14394
+#define __GLIBC_PREREQ(418,14422
+#  define __USE_LARGEFILE	430,14851
+#  define __USE_LARGEFILE64	431,14879
+# define __USE_EXTERN_INLINES	440,15161
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@bits@stdint-intn.h,170
+#define _BITS_STDINT_INTN_H	20,841
+typedef __int8_t int8_t;24,897
+typedef __int16_t int16_t;25,922
+typedef __int32_t int32_t;26,949
+typedef __int64_t int64_t;27,976
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@bits@types.h,3629
+#define	_BITS_TYPES_H	24,951
+typedef unsigned char __u_char;30,1052
+typedef unsigned short int __u_short;31,1084
+typedef unsigned int __u_int;32,1122
+typedef unsigned long int __u_long;33,1152
+typedef signed char __int8_t;36,1265
+typedef unsigned char __uint8_t;37,1295
+typedef signed short int __int16_t;38,1328
+typedef unsigned short int __uint16_t;39,1364
+typedef signed int __int32_t;40,1403
+typedef unsigned int __uint32_t;41,1433
+typedef signed long int __int64_t;43,1487
+typedef unsigned long int __uint64_t;44,1522
+__extension__ typedef signed long long int __int64_t;46,1566
+__extension__ typedef unsigned long long int __uint64_t;47,1620
+typedef long int __quad_t;52,1737
+typedef unsigned long int __u_quad_t;53,1764
+__extension__ typedef long long int __quad_t;55,1808
+__extension__ typedef unsigned long long int __u_quad_t;56,1854
+typedef long int __intmax_t;61,1971
+typedef unsigned long int __uintmax_t;62,2000
+__extension__ typedef long long int __intmax_t;64,2045
+__extension__ typedef unsigned long long int __uintmax_t;65,2093
+#define	__S16_TYPE	98,3724
+#define __U16_TYPE	99,3754
+#define	__S32_TYPE	100,3793
+#define __U32_TYPE	101,3817
+#define __SLONGWORD_TYPE	102,3850
+#define __ULONGWORD_TYPE	103,3884
+# define __SQUAD_TYPE	105,3948
+# define __UQUAD_TYPE	106,3980
+# define __SWORD_TYPE	107,4014
+# define __UWORD_TYPE	108,4041
+# define __SLONG32_TYPE	109,4077
+# define __ULONG32_TYPE	110,4111
+# define __S64_TYPE	111,4154
+# define __U64_TYPE	112,4184
+# define __STD_TYPE	115,4330
+# define __SQUAD_TYPE	117,4396
+# define __UQUAD_TYPE	118,4428
+# define __SWORD_TYPE	119,4469
+# define __UWORD_TYPE	120,4501
+# define __SLONG32_TYPE	121,4542
+# define __ULONG32_TYPE	122,4571
+# define __S64_TYPE	123,4609
+# define __U64_TYPE	124,4639
+# define __STD_TYPE	126,4734
+__STD_TYPE __DEV_T_TYPE __dev_t;133,4848
+__STD_TYPE __UID_T_TYPE __uid_t;134,4912
+__STD_TYPE __GID_T_TYPE __gid_t;135,4982
+__STD_TYPE __INO_T_TYPE __ino_t;136,5053
+__STD_TYPE __INO64_T_TYPE __ino64_t;137,5122
+__STD_TYPE __MODE_T_TYPE __mode_t;138,5199
+__STD_TYPE __NLINK_T_TYPE __nlink_t;139,5274
+__STD_TYPE __OFF_T_TYPE __off_t;140,5344
+__STD_TYPE __OFF64_T_TYPE __off64_t;141,5416
+__STD_TYPE __PID_T_TYPE __pid_t;142,5498
+__STD_TYPE __FSID_T_TYPE __fsid_t;143,5571
+__STD_TYPE __CLOCK_T_TYPE __clock_t;144,5638
+__STD_TYPE __RLIM_T_TYPE __rlim_t;145,5708
+__STD_TYPE __RLIM64_T_TYPE __rlim64_t;146,5781
+__STD_TYPE __ID_T_TYPE __id_t;147,5864
+__STD_TYPE __TIME_T_TYPE __time_t;148,5925
+__STD_TYPE __USECONDS_T_TYPE __useconds_t;149,5992
+__STD_TYPE __SUSECONDS_T_TYPE __suseconds_t;150,6065
+__STD_TYPE __DADDR_T_TYPE __daddr_t;152,6148
+__STD_TYPE __KEY_T_TYPE __key_t;153,6220
+__STD_TYPE __CLOCKID_T_TYPE __clockid_t;156,6332
+__STD_TYPE __TIMER_T_TYPE __timer_t;159,6418
+__STD_TYPE __BLKSIZE_T_TYPE __blksize_t;162,6493
+__STD_TYPE __BLKCNT_T_TYPE __blkcnt_t;167,6632
+__STD_TYPE __BLKCNT64_T_TYPE __blkcnt64_t;168,6671
+__STD_TYPE __FSBLKCNT_T_TYPE __fsblkcnt_t;171,6756
+__STD_TYPE __FSBLKCNT64_T_TYPE __fsblkcnt64_t;172,6799
+__STD_TYPE __FSFILCNT_T_TYPE __fsfilcnt_t;175,6887
+__STD_TYPE __FSFILCNT64_T_TYPE __fsfilcnt64_t;176,6930
+__STD_TYPE __FSWORD_T_TYPE __fsword_t;179,7027
+__STD_TYPE __SSIZE_T_TYPE __ssize_t;181,7067
+__STD_TYPE __SYSCALL_SLONG_TYPE __syscall_slong_t;184,7190
+__STD_TYPE __SYSCALL_ULONG_TYPE __syscall_ulong_t;186,7289
+typedef __off64_t __loff_t;190,7448
+typedef char *__caddr_t;__caddr_t191,7521
+__STD_TYPE __SWORD_TYPE __intptr_t;194,7614
+__STD_TYPE __U32_TYPE __socklen_t;197,7692
+typedef int __sig_atomic_t;202,7916
+#undef __STD_TYPE204,7945
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@bits@wordsize.h,258
+# define __WORDSIZE	4,107
+# define __WORDSIZE	6,136
+#define __WORDSIZE32_SIZE_ULONG	7,159
+#define __WORDSIZE32_PTRDIFF_LONG	8,194
+# define __WORDSIZE_TIME64_COMPAT32	12,256
+# define __SYSCALL_WORDSIZE	14,359
+# define __WORDSIZE_TIME64_COMPAT32	16,397
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@bits@stdint-uintn.h,179
+#define _BITS_STDINT_UINTN_H	20,843
+typedef __uint8_t uint8_t;24,900
+typedef __uint16_t uint16_t;25,927
+typedef __uint32_t uint32_t;26,956
+typedef __uint64_t uint64_t;27,985
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@bits@wchar.h,210
+#define _BITS_WCHAR_H	20,848
+# define __WCHAR_MAX	34,1562
+# define __WCHAR_MAX	36,1617
+# define __WCHAR_MAX	38,1666
+# define __WCHAR_MIN	42,1737
+# define __WCHAR_MIN	44,1792
+# define __WCHAR_MIN	46,1831
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@bits@typesizes.h,1498
+#define	_BITS_TYPESIZES_H	24,997
+# define __SYSCALL_SLONG_TYPE	31,1259
+# define __SYSCALL_ULONG_TYPE	32,1302
+# define __SYSCALL_SLONG_TYPE	34,1351
+# define __SYSCALL_ULONG_TYPE	35,1398
+#define __DEV_T_TYPE	38,1453
+#define __UID_T_TYPE	39,1488
+#define __GID_T_TYPE	40,1521
+#define __INO_T_TYPE	41,1554
+#define __INO64_T_TYPE	42,1597
+#define __MODE_T_TYPE	43,1634
+# define __NLINK_T_TYPE	45,1686
+# define __FSWORD_T_TYPE	46,1732
+# define __NLINK_T_TYPE	48,1784
+# define __FSWORD_T_TYPE	49,1822
+#define __OFF_T_TYPE	51,1867
+#define __OFF64_T_TYPE	52,1910
+#define __PID_T_TYPE	53,1947
+#define __RLIM_T_TYPE	54,1980
+#define __RLIM64_T_TYPE	55,2024
+#define __BLKCNT_T_TYPE	56,2062
+#define __BLKCNT64_T_TYPE	57,2108
+#define __FSBLKCNT_T_TYPE	58,2147
+#define __FSBLKCNT64_T_TYPE	59,2194
+#define __FSFILCNT_T_TYPE	60,2235
+#define __FSFILCNT64_T_TYPE	61,2282
+#define __ID_T_TYPE	62,2323
+#define __CLOCK_T_TYPE	63,2355
+#define __TIME_T_TYPE	64,2400
+#define __USECONDS_T_TYPE	65,2444
+#define __SUSECONDS_T_TYPE	66,2481
+#define __DADDR_T_TYPE	67,2529
+#define __KEY_T_TYPE	68,2564
+#define __CLOCKID_T_TYPE	69,2597
+#define __TIMER_T_TYPE	70,2633
+#define __BLKSIZE_T_TYPE	71,2664
+#define __FSID_T_TYPE	72,2710
+#define __SSIZE_T_TYPE	73,2758
+#define __CPU_MASK_TYPE 74,2795
+# define __OFF_T_MATCHES_OFF64_T	80,3045
+# define __INO_T_MATCHES_INO64_T	83,3116
+# define __RLIM_T_MATCHES_RLIM64_T	86,3192
+# define __RLIM_T_MATCHES_RLIM64_T	88,3235
+#define __FD_SETSIZE	92,3338
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@stdc-predef.h,262
+#define	_STDC_PREDEF_H	19,812
+#  define __STDC_IEC_559__	38,1715
+# define __STDC_IEC_559__	41,1759
+#  define __STDC_IEC_559_COMPLEX__	46,1856
+# define __STDC_IEC_559_COMPLEX__	49,1907
+#define __STDC_ISO_10646__	58,2245
+#define __STDC_NO_THREADS__	61,2324
+
+main.c,15
+int main 5,45
+
+src/vm.c,408
+static inline uint32_t min 11,152
+static void usage 16,268
+Stack* stack_new 21,404
+static int stack_full 32,612
+static int stack_empty 39,741
+void stack_push 44,819
+Object stack_pop 53,976
+Object stack_peek 63,1128
+uint8_t* load_file 72,1240
+enum INSTRUCTION_TYPE resolve_code 102,1951
+uint8_t* op_nop 123,2220
+uint8_t* op_halt 128,2300
+uint8_t* op_push_char 133,2381
+uint8_t* op_emit 142,2577
+
+src/CMakeFiles/feature_tests.c,53
+  const char features[features2,1
+int main(34,617
+
+src/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c,7469
+# define ID_VOID_MAIN6,98
+# define const10,197
+# define volatile11,212
+# define COMPILER_ID 19,413
+#  define SIMULATE_ID 21,465
+# define COMPILER_VERSION_MAJOR 24,533
+# define COMPILER_VERSION_MINOR 25,591
+#  define COMPILER_VERSION_PATCH 27,691
+#  define COMPILER_VERSION_PATCH 29,760
+#  define COMPILER_VERSION_TWEAK 33,919
+#  define SIMULATE_VERSION_MAJOR 37,1041
+#  define SIMULATE_VERSION_MINOR 38,1094
+# define COMPILER_ID 42,1182
+# define COMPILER_VERSION_MAJOR 43,1215
+# define COMPILER_VERSION_MINOR 44,1263
+#  define COMPILER_VERSION_PATCH 46,1353
+# define COMPILER_ID 50,1484
+# define COMPILER_VERSION_MAJOR 51,1519
+# define COMPILER_VERSION_MINOR 52,1591
+# define COMPILER_VERSION_PATCH 53,1663
+# define COMPILER_ID 56,1764
+# define COMPILER_VERSION_MAJOR 58,1824
+# define COMPILER_VERSION_MINOR 59,1877
+# define COMPILER_ID 62,1984
+# define COMPILER_VERSION_MAJOR 64,2042
+# define COMPILER_VERSION_MINOR 65,2097
+#  define COMPILER_VERSION_PATCH 67,2186
+# define COMPILER_ID 71,2277
+# define COMPILER_VERSION_MAJOR 73,2346
+# define COMPILER_VERSION_MINOR 74,2410
+#  define COMPILER_VERSION_PATCH 76,2499
+# define COMPILER_ID 80,2589
+#  define COMPILER_VERSION_MAJOR 83,2674
+#  define COMPILER_VERSION_MINOR 84,2727
+#  define COMPILER_VERSION_PATCH 85,2786
+#  define COMPILER_VERSION_MAJOR 88,2880
+#  define COMPILER_VERSION_MINOR 89,2932
+#  define COMPILER_VERSION_PATCH 90,2990
+# define COMPILER_ID 94,3080
+# define COMPILER_VERSION_MAJOR 96,3131
+# define COMPILER_VERSION_MINOR 97,3182
+# define COMPILER_VERSION_PATCH 98,3237
+# define COMPILER_ID 101,3315
+# define COMPILER_VERSION_MAJOR 103,3376
+# define COMPILER_VERSION_MINOR 104,3433
+# define COMPILER_VERSION_PATCH 105,3495
+# define COMPILER_ID 108,3613
+# define COMPILER_VERSION_MAJOR 110,3663
+# define COMPILER_VERSION_MINOR 111,3713
+# define COMPILER_VERSION_PATCH 112,3767
+# define COMPILER_ID 115,3895
+# define COMPILER_VERSION_MAJOR 117,3944
+# define COMPILER_VERSION_MINOR 118,3994
+# define COMPILER_VERSION_PATCH 119,4048
+# define COMPILER_ID 122,4175
+# define COMPILER_VERSION_MAJOR 124,4231
+# define COMPILER_VERSION_MINOR 125,4281
+# define COMPILER_VERSION_PATCH 126,4335
+# define COMPILER_ID 129,4411
+# define COMPILER_VERSION_MAJOR 130,4438
+# define COMPILER_VERSION_MINOR 131,4484
+#  define COMPILER_VERSION_PATCH 133,4570
+# define COMPILER_ID 137,4659
+# define COMPILER_VERSION_MAJOR 138,4687
+# define COMPILER_VERSION_MINOR 139,4739
+# define COMPILER_ID 142,4831
+# define COMPILER_VERSION_MAJOR 144,4901
+# define COMPILER_VERSION_MINOR 145,4970
+# define COMPILER_VERSION_PATCH 146,5045
+# define COMPILER_ID 149,5198
+# define COMPILER_ID 152,5255
+# define COMPILER_ID 155,5309
+# define COMPILER_ID 158,5370
+# define COMPILER_ID 161,5459
+#  define SIMULATE_ID 163,5516
+# define COMPILER_VERSION_MAJOR 165,5553
+# define COMPILER_VERSION_MINOR 166,5606
+# define COMPILER_VERSION_PATCH 167,5659
+#  define SIMULATE_VERSION_MAJOR 170,5765
+#  define SIMULATE_VERSION_MINOR 171,5818
+# define COMPILER_VERSION_TWEAK 173,5879
+# define COMPILER_ID 176,5966
+#  define SIMULATE_ID 178,6018
+# define COMPILER_VERSION_MAJOR 180,6055
+# define COMPILER_VERSION_MINOR 181,6108
+# define COMPILER_VERSION_PATCH 182,6161
+#  define SIMULATE_VERSION_MAJOR 185,6267
+#  define SIMULATE_VERSION_MINOR 186,6320
+# define COMPILER_ID 190,6406
+# define COMPILER_VERSION_MAJOR 191,6433
+#  define COMPILER_VERSION_MINOR 193,6508
+#  define COMPILER_VERSION_PATCH 196,6603
+# define COMPILER_ID 200,6694
+# define COMPILER_VERSION_MAJOR 202,6746
+# define COMPILER_VERSION_MINOR 203,6798
+#   define COMPILER_VERSION_PATCH 207,6937
+#   define COMPILER_VERSION_PATCH 210,7042
+#  define COMPILER_VERSION_TWEAK 214,7145
+# define COMPILER_ID 218,7317
+# define COMPILER_VERSION_MAJOR 221,7421
+# define COMPILER_VERSION_MINOR 222,7483
+# define COMPILER_VERSION_PATCH 223,7552
+# define COMPILER_ID 227,7694
+#  define COMPILER_VERSION_MAJOR 229,7743
+#  define COMPILER_VERSION_MINOR 230,7801
+#  define COMPILER_VERSION_PATCH 231,7865
+#  define COMPILER_VERSION_INTERNAL 232,7920
+# define COMPILER_ID 236,8021
+  # define COMPILER_VERSION_MAJOR 239,8115
+  # define COMPILER_VERSION_MINOR 240,8178
+  # define COMPILER_VERSION_PATCH 241,8245
+  # define COMPILER_VERSION_MAJOR 244,8351
+  # define COMPILER_VERSION_MINOR 245,8413
+  # define COMPILER_VERSION_PATCH 246,8479
+# define COMPILER_ID 251,8607
+#  define COMPILER_VERSION_MAJOR 253,8670
+#  define COMPILER_VERSION_MINOR 254,8729
+#  define COMPILER_VERSION_PATCH 255,8788
+#  define COMPILER_VERSION_MAJOR 258,8873
+#  define COMPILER_VERSION_MINOR 259,8920
+#  define COMPILER_VERSION_PATCH 260,8971
+# define COMPILER_ID 264,9098
+#  define COMPILER_VERSION_MAJOR 267,9201
+#  define COMPILER_VERSION_MINOR 268,9265
+#  define COMPILER_VERSION_PATCH 269,9333
+#  define COMPILER_VERSION_MAJOR 272,9440
+#  define COMPILER_VERSION_MINOR 273,9500
+#  define COMPILER_VERSION_PATCH 274,9564
+# define COMPILER_ID 282,9825
+# define COMPILER_ID 285,9898
+# define COMPILER_ID 288,9954
+char const* info_compiler 295,10252
+char const* info_simulate 297,10339
+char const* qnxnto 301,10433
+char const *info_cray info_cray305,10528
+#define STRINGIFY_HELPER(308,10603
+#define STRINGIFY(309,10634
+# define PLATFORM_ID 313,10778
+# define PLATFORM_ID 316,10834
+# define PLATFORM_ID 319,10892
+# define PLATFORM_ID 322,10947
+# define PLATFORM_ID 325,11040
+# define PLATFORM_ID 328,11121
+# define PLATFORM_ID 331,11200
+# define PLATFORM_ID 334,11280
+# define PLATFORM_ID 337,11349
+# define PLATFORM_ID 340,11475
+# define PLATFORM_ID 343,11561
+# define PLATFORM_ID 346,11633
+# define PLATFORM_ID 349,11688
+# define PLATFORM_ID 352,11779
+# define PLATFORM_ID 355,11854
+# define PLATFORM_ID 358,11946
+# define PLATFORM_ID 361,12023
+# define PLATFORM_ID 364,12121
+# define PLATFORM_ID 367,12178
+# define PLATFORM_ID 370,12235
+# define PLATFORM_ID 373,12305
+# define PLATFORM_ID 376,12377
+# define PLATFORM_ID 379,12467
+# define PLATFORM_ID 382,12565
+# define PLATFORM_ID 385,12658
+#  define PLATFORM_ID 389,12739
+#  define PLATFORM_ID 392,12794
+#  define PLATFORM_ID 395,12847
+#  define PLATFORM_ID 398,12904
+#  define PLATFORM_ID401,12969
+# define PLATFORM_ID405,13029
+#  define ARCHITECTURE_ID 416,13369
+#  define ARCHITECTURE_ID 419,13447
+#  define ARCHITECTURE_ID 422,13504
+#  define ARCHITECTURE_ID 425,13562
+#   define ARCHITECTURE_ID 429,13638
+#   define ARCHITECTURE_ID 431,13694
+#   define ARCHITECTURE_ID 433,13738
+#  define ARCHITECTURE_ID 437,13824
+#  define ARCHITECTURE_ID 440,13880
+#  define ARCHITECTURE_ID 443,13947
+#  define ARCHITECTURE_ID 448,14033
+#  define ARCHITECTURE_ID 451,14090
+#  define ARCHITECTURE_ID 454,14157
+#  define ARCHITECTURE_ID 459,14285
+#  define ARCHITECTURE_ID 462,14345
+#  define ARCHITECTURE_ID 465,14412
+#  define ARCHITECTURE_ID468,14455
+#define DEC(472,14539
+#define HEX(483,14888
+char const info_version[info_version495,15250
+char const info_version_internal[info_version_internal513,15748
+char const info_simulate_version[info_simulate_version522,16074
+char const* info_platform 542,16743
+char const* info_arch 543,16811
+#  define C_DIALECT 550,16948
+#  define C_DIALECT552,16980
+# define C_DIALECT 555,17042
+# define C_DIALECT 557,17100
+# define C_DIALECT 559,17130
+const char* info_language_dialect_default 561,17161
+void main(567,17353
+int main(570,17402
+
+build/CMakeFiles/feature_tests.c,53
+  const char features[features2,1
+int main(34,617
+
+build/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c,7469
+# define ID_VOID_MAIN6,98
+# define const10,197
+# define volatile11,212
+# define COMPILER_ID 19,413
+#  define SIMULATE_ID 21,465
+# define COMPILER_VERSION_MAJOR 24,533
+# define COMPILER_VERSION_MINOR 25,591
+#  define COMPILER_VERSION_PATCH 27,691
+#  define COMPILER_VERSION_PATCH 29,760
+#  define COMPILER_VERSION_TWEAK 33,919
+#  define SIMULATE_VERSION_MAJOR 37,1041
+#  define SIMULATE_VERSION_MINOR 38,1094
+# define COMPILER_ID 42,1182
+# define COMPILER_VERSION_MAJOR 43,1215
+# define COMPILER_VERSION_MINOR 44,1263
+#  define COMPILER_VERSION_PATCH 46,1353
+# define COMPILER_ID 50,1484
+# define COMPILER_VERSION_MAJOR 51,1519
+# define COMPILER_VERSION_MINOR 52,1591
+# define COMPILER_VERSION_PATCH 53,1663
+# define COMPILER_ID 56,1764
+# define COMPILER_VERSION_MAJOR 58,1824
+# define COMPILER_VERSION_MINOR 59,1877
+# define COMPILER_ID 62,1984
+# define COMPILER_VERSION_MAJOR 64,2042
+# define COMPILER_VERSION_MINOR 65,2097
+#  define COMPILER_VERSION_PATCH 67,2186
+# define COMPILER_ID 71,2277
+# define COMPILER_VERSION_MAJOR 73,2346
+# define COMPILER_VERSION_MINOR 74,2410
+#  define COMPILER_VERSION_PATCH 76,2499
+# define COMPILER_ID 80,2589
+#  define COMPILER_VERSION_MAJOR 83,2674
+#  define COMPILER_VERSION_MINOR 84,2727
+#  define COMPILER_VERSION_PATCH 85,2786
+#  define COMPILER_VERSION_MAJOR 88,2880
+#  define COMPILER_VERSION_MINOR 89,2932
+#  define COMPILER_VERSION_PATCH 90,2990
+# define COMPILER_ID 94,3080
+# define COMPILER_VERSION_MAJOR 96,3131
+# define COMPILER_VERSION_MINOR 97,3182
+# define COMPILER_VERSION_PATCH 98,3237
+# define COMPILER_ID 101,3315
+# define COMPILER_VERSION_MAJOR 103,3376
+# define COMPILER_VERSION_MINOR 104,3433
+# define COMPILER_VERSION_PATCH 105,3495
+# define COMPILER_ID 108,3613
+# define COMPILER_VERSION_MAJOR 110,3663
+# define COMPILER_VERSION_MINOR 111,3713
+# define COMPILER_VERSION_PATCH 112,3767
+# define COMPILER_ID 115,3895
+# define COMPILER_VERSION_MAJOR 117,3944
+# define COMPILER_VERSION_MINOR 118,3994
+# define COMPILER_VERSION_PATCH 119,4048
+# define COMPILER_ID 122,4175
+# define COMPILER_VERSION_MAJOR 124,4231
+# define COMPILER_VERSION_MINOR 125,4281
+# define COMPILER_VERSION_PATCH 126,4335
+# define COMPILER_ID 129,4411
+# define COMPILER_VERSION_MAJOR 130,4438
+# define COMPILER_VERSION_MINOR 131,4484
+#  define COMPILER_VERSION_PATCH 133,4570
+# define COMPILER_ID 137,4659
+# define COMPILER_VERSION_MAJOR 138,4687
+# define COMPILER_VERSION_MINOR 139,4739
+# define COMPILER_ID 142,4831
+# define COMPILER_VERSION_MAJOR 144,4901
+# define COMPILER_VERSION_MINOR 145,4970
+# define COMPILER_VERSION_PATCH 146,5045
+# define COMPILER_ID 149,5198
+# define COMPILER_ID 152,5255
+# define COMPILER_ID 155,5309
+# define COMPILER_ID 158,5370
+# define COMPILER_ID 161,5459
+#  define SIMULATE_ID 163,5516
+# define COMPILER_VERSION_MAJOR 165,5553
+# define COMPILER_VERSION_MINOR 166,5606
+# define COMPILER_VERSION_PATCH 167,5659
+#  define SIMULATE_VERSION_MAJOR 170,5765
+#  define SIMULATE_VERSION_MINOR 171,5818
+# define COMPILER_VERSION_TWEAK 173,5879
+# define COMPILER_ID 176,5966
+#  define SIMULATE_ID 178,6018
+# define COMPILER_VERSION_MAJOR 180,6055
+# define COMPILER_VERSION_MINOR 181,6108
+# define COMPILER_VERSION_PATCH 182,6161
+#  define SIMULATE_VERSION_MAJOR 185,6267
+#  define SIMULATE_VERSION_MINOR 186,6320
+# define COMPILER_ID 190,6406
+# define COMPILER_VERSION_MAJOR 191,6433
+#  define COMPILER_VERSION_MINOR 193,6508
+#  define COMPILER_VERSION_PATCH 196,6603
+# define COMPILER_ID 200,6694
+# define COMPILER_VERSION_MAJOR 202,6746
+# define COMPILER_VERSION_MINOR 203,6798
+#   define COMPILER_VERSION_PATCH 207,6937
+#   define COMPILER_VERSION_PATCH 210,7042
+#  define COMPILER_VERSION_TWEAK 214,7145
+# define COMPILER_ID 218,7317
+# define COMPILER_VERSION_MAJOR 221,7421
+# define COMPILER_VERSION_MINOR 222,7483
+# define COMPILER_VERSION_PATCH 223,7552
+# define COMPILER_ID 227,7694
+#  define COMPILER_VERSION_MAJOR 229,7743
+#  define COMPILER_VERSION_MINOR 230,7801
+#  define COMPILER_VERSION_PATCH 231,7865
+#  define COMPILER_VERSION_INTERNAL 232,7920
+# define COMPILER_ID 236,8021
+  # define COMPILER_VERSION_MAJOR 239,8115
+  # define COMPILER_VERSION_MINOR 240,8178
+  # define COMPILER_VERSION_PATCH 241,8245
+  # define COMPILER_VERSION_MAJOR 244,8351
+  # define COMPILER_VERSION_MINOR 245,8413
+  # define COMPILER_VERSION_PATCH 246,8479
+# define COMPILER_ID 251,8607
+#  define COMPILER_VERSION_MAJOR 253,8670
+#  define COMPILER_VERSION_MINOR 254,8729
+#  define COMPILER_VERSION_PATCH 255,8788
+#  define COMPILER_VERSION_MAJOR 258,8873
+#  define COMPILER_VERSION_MINOR 259,8920
+#  define COMPILER_VERSION_PATCH 260,8971
+# define COMPILER_ID 264,9098
+#  define COMPILER_VERSION_MAJOR 267,9201
+#  define COMPILER_VERSION_MINOR 268,9265
+#  define COMPILER_VERSION_PATCH 269,9333
+#  define COMPILER_VERSION_MAJOR 272,9440
+#  define COMPILER_VERSION_MINOR 273,9500
+#  define COMPILER_VERSION_PATCH 274,9564
+# define COMPILER_ID 282,9825
+# define COMPILER_ID 285,9898
+# define COMPILER_ID 288,9954
+char const* info_compiler 295,10252
+char const* info_simulate 297,10339
+char const* qnxnto 301,10433
+char const *info_cray info_cray305,10528
+#define STRINGIFY_HELPER(308,10603
+#define STRINGIFY(309,10634
+# define PLATFORM_ID 313,10778
+# define PLATFORM_ID 316,10834
+# define PLATFORM_ID 319,10892
+# define PLATFORM_ID 322,10947
+# define PLATFORM_ID 325,11040
+# define PLATFORM_ID 328,11121
+# define PLATFORM_ID 331,11200
+# define PLATFORM_ID 334,11280
+# define PLATFORM_ID 337,11349
+# define PLATFORM_ID 340,11475
+# define PLATFORM_ID 343,11561
+# define PLATFORM_ID 346,11633
+# define PLATFORM_ID 349,11688
+# define PLATFORM_ID 352,11779
+# define PLATFORM_ID 355,11854
+# define PLATFORM_ID 358,11946
+# define PLATFORM_ID 361,12023
+# define PLATFORM_ID 364,12121
+# define PLATFORM_ID 367,12178
+# define PLATFORM_ID 370,12235
+# define PLATFORM_ID 373,12305
+# define PLATFORM_ID 376,12377
+# define PLATFORM_ID 379,12467
+# define PLATFORM_ID 382,12565
+# define PLATFORM_ID 385,12658
+#  define PLATFORM_ID 389,12739
+#  define PLATFORM_ID 392,12794
+#  define PLATFORM_ID 395,12847
+#  define PLATFORM_ID 398,12904
+#  define PLATFORM_ID401,12969
+# define PLATFORM_ID405,13029
+#  define ARCHITECTURE_ID 416,13369
+#  define ARCHITECTURE_ID 419,13447
+#  define ARCHITECTURE_ID 422,13504
+#  define ARCHITECTURE_ID 425,13562
+#   define ARCHITECTURE_ID 429,13638
+#   define ARCHITECTURE_ID 431,13694
+#   define ARCHITECTURE_ID 433,13738
+#  define ARCHITECTURE_ID 437,13824
+#  define ARCHITECTURE_ID 440,13880
+#  define ARCHITECTURE_ID 443,13947
+#  define ARCHITECTURE_ID 448,14033
+#  define ARCHITECTURE_ID 451,14090
+#  define ARCHITECTURE_ID 454,14157
+#  define ARCHITECTURE_ID 459,14285
+#  define ARCHITECTURE_ID 462,14345
+#  define ARCHITECTURE_ID 465,14412
+#  define ARCHITECTURE_ID468,14455
+#define DEC(472,14539
+#define HEX(483,14888
+char const info_version[info_version495,15250
+char const info_version_internal[info_version_internal513,15748
+char const info_simulate_version[info_simulate_version522,16074
+char const* info_platform 542,16743
+char const* info_arch 543,16811
+#  define C_DIALECT 550,16948
+#  define C_DIALECT552,16980
+# define C_DIALECT 555,17042
+# define C_DIALECT 557,17100
+# define C_DIALECT 559,17130
+const char* info_language_dialect_default 561,17161
+void main(567,17353
+int main(570,17402
+
+.ccls-cache/@@home@zayafa@workspace@SimpleVirtualMachine@/@usr@include@x86_64-linux-gnu@gnu@stubs.h,0

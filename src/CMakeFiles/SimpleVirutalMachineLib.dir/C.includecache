@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zayafa/workspace/SimpleVirtualMachine/include/vm.h
+stdint.h
+-
+
+/home/zayafa/workspace/SimpleVirtualMachine/src/vm.c
+sys/types.h
+-
+sys/stat.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+-
+math.h
+-
+../include/vm.h
+/home/zayafa/workspace/SimpleVirtualMachine/include/vm.h
+
